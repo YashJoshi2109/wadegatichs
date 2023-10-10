@@ -28,6 +28,9 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 
 
   <!-- =======================================================
@@ -41,17 +44,30 @@
 
 <body>
 
+
   <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
+  <section id="topbar" class="d-flex align-items-center" style="">
     <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="container">
+        <div class="ticker">
+          <div class="news" style="display: flex;">
+            <marquee class="news-content">
+              <strong>
+                <p>We're thrilled to announce that Wadegati CHS will start accepting bookings for our saleable flats on
+                  October 24, 2023, to coincide with the joyous occasion of Dussehra.</p>
+              </strong>
+            </marquee>
+          </div>
+        </div>
+      </div>
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope d-flex align-items-center"><a
             href="mailto:wadegatichs@gmail.com">wadegatichs@gmail.com</a></i>
       </div>
 
-      <div class="cta d-none d-md-flex align-items-center">
+      <!-- <div class="cta d-none d-md-flex align-items-center">
         <a href="/" class="scrollto">Login</a>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -105,13 +121,47 @@
       <h2>Inspired Living, Every Day</h2>
       <div class="d-flex align-items-center">
         <i class="bx bxs-right-arrow-alt get-started-icon"></i>
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <a href="#about" id="showToastLink" class="btn-get-started scrollto">Get Started</a>
+
+        <!-- Toast container -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <!-- Toast -->
+          <div class="toast" id="myToast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="80000">
+            <div class="toast-header">
+              <strong class="me-auto">Flat Bookings Begin on Dussehra Festival! </strong>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"
+                id="closeToastButton"></button>
+            </div>
+            <div class="toast-body">
+              This festive season, you have the opportunity to secure your dream home. To learn more about the available
+              flats, pricing, and special offers, please don't hesitate to contact our dedicated sales team. You can
+              also schedule a call with us by filling out the form in the "Contact Us" section.
+              <br>Warm regards,<br><strong>Wadegati CHS Team</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Include Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Script to show the toast on link click -->
+        <script>
+          // Function to show the toast
+          function showToast() {
+            var myToast = new bootstrap.Toast(document.getElementById("myToast"));
+            myToast.show();
+          }
+
+          // Attach a click event listener to the link to trigger the toast
+          document.getElementById("showToastLink").addEventListener("click", showToast);
+        </script>
+
+
       </div>
     </div>
   </section><!-- End Hero -->
 
   <main id="main">
-
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
       <div class="container">
@@ -214,6 +264,8 @@
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
+
+
       <!-- <div class="container" data-aos="fade-up">
 
         <div class="clients-slider swiper">
@@ -610,74 +662,87 @@
 
         <div class="section-title">
           <h2 data-aos="fade-up">F.A.Q</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-            ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p data-aos="fade-up">Explore Common Questions.</p>
         </div>
 
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
+                data-bs-target="#faq-list-1">How do I start the process of purchasing a flat in your community? <i
                   class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                 <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
-                  gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                  To begin, explore our available flats online or visit our sales office. Once you find a flat that
+                  suits your needs, contact our sales team for detailed information and assistance.
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="100">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2"
-                class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i
+                class="collapsed">What varieties of carpet area flats does Wadegati CHS have to offer?<i
                   class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-                  donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
-                  ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                  At Wadegati CHS, we offer a variety of carpet area flats to meet your needs, including:
+                  1 BHK Flats: These spacious 1-bedroom flats provide a comfortable living space with a carpet area of
+                  450 square feet.
+                  2 BHK Apartments: Our 2-bedroom apartments offer a roomier layout, with a generous carpet area of 636
+                  square feet.
+                  If you have any more specific inquiries or would like additional information, please don't hesitate to
+                  submit your query through our "Contact Us" form. Our team is here to assist you with any questions you
+                  may have.
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="200">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3"
-                class="collapsed">Dolor sit amet consectetur adipiscing elit? <i
+                class="collapsed">What amenities are included with the flat purchase? <i
                   class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum
-                  integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt.
-                  Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi
-                  quis
+                  We offer an array of amenities, including two beautiful garden areas, a fully equipped gymnasium, a
+                  spacious party hall, and a jogging track. Additionally, we provide podium lift parking and stack
+                  parking for convenience. To schedule a personal visit, please fill out your details in the "Contact
+                  Us" section, and our team will arrange a visit at your preferred time. We look forward to showcasing
+                  our amenities to you.
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="300">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4"
-                class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i
+                class="collapsed">What is the expected possession date for booked flat? <i
                   class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc
-                  vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus
-                  gravida quis blandit turpis cursus in.
+                  Possession dates vary by project and construction progress. Our team will provide an estimated
+                  possession timeline when you book your flat.
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="400">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5"
-                class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem
-                dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                class="collapsed">Are there any special discounts or offers available for early bookings? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada
-                  nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis
-                  tellus in metus vulputate eu scelerisque.
+                <p>We may have special promotions or discounts available for early bookings. Contact our sales team to
+                  inquire about any ongoing offers.
+                </p>
+              </div>
+            </li>
+
+
+            <li data-aos="fade-up" data-aos-delay="500">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-6"
+                class="collapsed">How can I check the availability of specific floor plans or units? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-6" class="collapse" data-bs-parent=".faq-list">
+                <p>You can inquire about the availability of specific floor plans by contacting our sales team or
+                  scheduling a visit.
                 </p>
               </div>
             </li>
@@ -795,6 +860,7 @@
     </div>
   </footer><!-- End Footer -->
 
+
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
@@ -809,17 +875,13 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="form.js"></script>
-  <script>
-    $('.popup-link').magnificPopup({
-      type: 'image',
-      mainClass: 'mfp-with-zoom',
-      zoom: {
-        enabled: true,
-        duration: 300,
-        easing: 'ease-in-out',
-      }
-    });
-  </script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/jquery-3.1.1.min.js"></script>
+  <script src="assets/js/jquery.convform.js"></script>
+
+
+
+
 
 
 </body>
