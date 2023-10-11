@@ -13,6 +13,23 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Add the lightbox2 CSS and JavaScript files -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Include the necessary CSS and JavaScript libraries -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
+
+
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -30,8 +47,32 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <style>
+    /* Add this CSS to your stylesheet */
 
+    .vertical-list {
+      list-style: none;
+      padding: 20px;
+      margin-left: 80px;
+    }
 
+    .vertical-list-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .vertical-list-item i {
+      font-size: 24px;
+      color: #007bff;
+      /* Change the color to your preference */
+      margin-right: 10px;
+    }
+
+    .bold-text {
+      font-weight: bold;
+    }
+  </style>
 
   <!-- =======================================================
   * Template Name: Flexor
@@ -46,7 +87,7 @@
 
 
   <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center" style="">
+  <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="container">
         <div class="ticker">
@@ -421,23 +462,30 @@
 
     <!-- ======= Portfolio Section ======= -->
 
-    <section id="portfolio" class="portfolio">
+
+    <section id="portfolio" class="portfolio popup-link">
       <div class="container my-5">
         <div class="row">
           <div class="col-lg-6">
-            <img class="w-100 shadow popup-link" src="https://via.placeholder.com/824x552" />
+            <!-- Add data-lightbox attribute to the image to enable the lightbox effect -->
+            <a href="assets/img/Wadegati_proposed_plan-1.png" data-lightbox="enlarge-image">
+              <img class="w-100 shadow" src="assets/img/Wadegati_resize.png" />
+            </a>
           </div>
           <div class="col-lg-6">
             <div class="p-5 mt-4">
-              <h1 class="display-4">H1 Heading</h1>
-              <p class="lead">Crow's nest schooner ho scallywag hail-shot gabion salmagundi. Doubloon careen code of
-                conduct lugsail hulk ye long clothes. </p>
-              <a href="" class="btn btn-outline-dark">Read More</a>
+              <h1 class="display-4">Ample Space for Comfortable Living</h1>
+              <p class="lead"> Discover spacious living at Wadegati Tower, where thoughtfully designed floor plans
+                provide comfort and style. Our open-concept spaces, large window deck create a bright, inviting
+                atmosphere. <strong>A visit to experience the spaciousness yourself.<br></strong>
+              </p>
+              <a href="#contact" class="btn btn-outline-dark scrollto">Contact Us</a>
             </div>
           </div>
         </div>
+      </div>
     </section>
-    <!-- End of section1 for card container -->
+
 
     <section id="portfolio" class="portfolio section-bg">
       <div class="container my-5">
@@ -451,123 +499,103 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <img class="w-100 shadow" src="assets\img\blurimg.jpg" />
+            <!-- Add data-lightbox attribute to the image to enable the lightbox effect -->
+            <a href="/assets/img/blurimg.jpg" data-lightbox="enlarge-image">
+              <img class="w-100 shadow" src="/assets/img/blurimg.jpg" />
+            </a>
           </div>
         </div>
+      </div>
     </section>
 
+    <!-- End of section1 for card container -->
     <section id="portfolio" class="portfolio popup-link">
       <div class="container my-5">
         <div class="row">
           <div class="col-lg-6">
-            <img class="w-100 shadow" src="assets\img\wadegati_3.jpg" />
+            <!-- Add data-lightbox attribute to the image to enable the lightbox effect -->
+            <a href="/assets/img/wadegati_3.jpg" data-lightbox="enlarge-image">
+              <img class="w-100 shadow" src="/assets/img/wadegati_3.jpg" />
+            </a>
           </div>
           <div class="col-lg-6">
             <div class="p-5 mt-4">
               <h1 class="display-4">Our spacious Floorplan</h1>
               <p class="lead"> Perfect blend of comfort and style. With an open-concept living area, modern kitchen,
                 and two bedrooms, this floor plan provides ample space for your lifestyle.<br>
-                <strong> To schedule a visit please fill up the form given in contact section</strong>
+                <strong> To schedule a visit please fill up the form given in the contact section</strong>
               </p>
               <a href="#contact" class="btn btn-outline-dark scrollto">Contact Us</a>
             </div>
           </div>
         </div>
+      </div>
     </section>
-
-
 
 
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container">
-
         <div class="section-title">
-          <h2 data-aos="fade-up">Team</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-            ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2 data-aos="fade-up">Landsite Map</h2>
+          <div class="row">
+            <div class="container mt-5">
+              <div class="row">
+                <div class="col-lg-6">
+                  <a href="/assets/img/wadegati_map.png" data-lightbox="enlarge-image">
+                    <img src="/assets/img/wadegati_map.png" alt="Site Map" class="img-fluid map-img">
+                  </a>
+                </div>
+                <div class="col-lg-6 map-container">
+                  <h2>Explore Our Site Surroundings</h2>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="vertical-list">
+                        <div class="vertical-list-item">
+                          <i class="fas fa-book custom-icon"></i>
+                          <span class="bold-text">Schools</span>&ThickSpace; 100 Mtr
+                        </div>
+                        <div class="vertical-list-item">
+                          <i class="fas fa-university custom-icon"></i>
+                          <span class="bold-text">Bank</span>&ThickSpace; 0.5 Km
+                        </div>
+                        <div class="vertical-list-item">
+                          <i class="fas fa-plane custom-icon"></i>
+                          <span class="bold-text">Airport</span>&ThickSpace; 11 Km
+                        </div>
+                        <div class="vertical-list-item">
+                          <i class="fas fa-road custom-icon"></i>
+                          <span class="bold-text">Highways</span>&ThickSpace; 1 Km
+                        </div>
+                        <div class="vertical-list-item">
+                          <i class="fas fa-train custom-icon"></i>
+                          <span class="bold-text">Railway</span>&ThickSpace; 900 Mtr
+                        </div>
+                        <div class="vertical-list-item">
+                          <i class="fas fa-building custom-icon"></i>
+                          <span class="bold-text">Restaurant</span>&ThinSpace; 4 Km
+                        </div>
+                        <div class="vertical-list-item">
+                          <i class="fas fa-shopping-bag custom-icon"></i>
+                          <span class="bold-text">Malls</span>&ThickSpace; 3.5 Km
+                        </div>
+                        <div class="vertical-list-item">
+                          <i class="fas fa-hospital custom-icon"></i>
+                          <span class="bold-text">Hospital</span>&ThickSpace; 4 Km
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
       </div>
-    </section><!-- End Team Section -->
+    </section>
+
+    <!-- End Team Section -->
 
     <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
