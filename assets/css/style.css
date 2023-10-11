@@ -408,7 +408,8 @@ h6 {
 #hero {
   width: 100%;
   height: 60vh;
-  background: url("../img/hero-bg.jpg") center center;
+  /* background: url("../img/hero-bg.jpg") center center; */
+  background: url("../img/hero-bg.jpg") center;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -2421,4 +2422,21 @@ lean span {
 .mfp-with-zoom.mfp-removing .mfp-container,
 .mfp-with-zoom.mfp-removing.mfp-bg {
   opacity: 0;
+}
+
+/* ribbion */
+.ribbon-wrapper {
+  position: relative;
+}
+
+.ribbon {
+  font-size: 12px;
+  background: red;
+  color: white;
+  padding: 11px 18px;
+  transform: rotate(360deg);
+  position: absolute;
+  top: 4px;
+  left: -28px;
+  z-index: 1;
 }

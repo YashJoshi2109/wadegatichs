@@ -393,3 +393,15 @@ function clearTextFunc() {
 }
 
 typeTextFunc();
+
+// Timelime
+const timelineItems = document.querySelectorAll(".timeline-item");
+
+timelineItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    timelineItems.forEach((otherItem) => {
+      otherItem.classList.remove("selected");
+    });
+    item.classList.add("selected");
+  });
+});
