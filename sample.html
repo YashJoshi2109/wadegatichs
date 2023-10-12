@@ -4,68 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historical Timeline Chart</title>
-
-    <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <style>
-        /* Custom CSS for the timeline chart */
         .timeline {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .timeline-event {
-            flex: 1;
-            text-align: center;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ddd;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: #007bff;
+            margin-left: -1px;
         }
 
-        .timeline-event:nth-child(odd) {
-            background-color: #e0e0e0;
+        .timeline-item {
+            position: relative;
+            padding: 20px 0;
+            border-top: 2px solid #007bff;
+            transition: background-color 0.2s;
         }
 
-        .timeline-event:last-child {
-            text-align: right;
+        .timeline-item:last-child {
+            border-bottom: 2px solid #007bff;
+        }
+
+        .timeline-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .timeline-item::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .timeline-date {
+            float: left;
+            margin-right: 20px;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .timeline-content {
+            margin-bottom: 20px;
+        }
+
+        .timeline-title {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .timeline-description {
+            margin: 10px 0;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h2 class="text-center my-5">Historical Timeline Chart</h2>
 
+    <div class="container mt-5">
         <div class="timeline">
-            <div class="timeline-event">
-                <h4>Event 1</h4>
-                <p>January 1900</p>
+            <div class="timeline-item">
+                <div class="timeline-date">Jan 2023</div>
+                <div class="timeline-content">
+                    <h2 class="timeline-title">Started Master's Program</h2>
+                    <p class="timeline-description">I began my Master's in Data Science at UTA, embarking on an exciting
+                        academic journey.</p>
+                </div>
             </div>
-            <div class="timeline-event">
-                <h4>Event 2</h4>
-                <p>March 1920</p>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Apr 2023</div>
+                <div class="timeline-content">
+                    <h2 class="timeline-title">Completed First Semester</h2>
+                    <p class="timeline-description">I successfully completed my first semester, gaining valuable
+                        knowledge in data analysis and machine learning.</p>
+                </div>
             </div>
-            <div class="timeline-event">
-                <h4>Event 3</h4>
-                <p>June 1950</p>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Jul 2023</div>
+                <div class="timeline-content">
+                    <h2 class="timeline-title">Internship at Data Corp</h2>
+                    <p class="timeline-description">I interned at Data Corp, where I applied my skills and learned more
+                        about real-world data science applications.</p>
+                </div>
             </div>
-            <div class="timeline-event">
-                <h4>Event 4</h4>
-                <p>August 1975</p>
-            </div>
-            <div class="timeline-event">
-                <h4>Event 5</h4>
-                <p>December 2000</p>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Dec 2023</div>
+                <div class="timeline-content">
+                    <h2 class="timeline-title">Second Semester</h2>
+                    <p class="timeline-description">I continued my studies and completed the second semester with a
+                        strong academic performance.</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Add Bootstrap JS and jQuery links -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
