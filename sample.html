@@ -2,53 +2,97 @@
 <html lang="en">
 
 <head>
-    <!-- Your head content goes here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Roadmap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .timeline-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .timeline {
+            width: 4000px;
+            /* Adjust to fit your content */
+            white-space: nowrap;
+            transition: transform 0.5s;
+            display: flex;
+        }
+
+        .timeline-event {
+            width: 200px;
+            height: 150px;
+            background: #3498db;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .scroll-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .scroll-left {
+            left: 10px;
+        }
+
+        .scroll-right {
+            right: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <section id="team" class="team section-bg">
-        <div class="container">
-            <div class="section-title">
-                <h2 data-aos="fade-up">Landsite Map</h2>
-                <div class="row">
-                    <div class="container mt-5">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <a href="assets/img/wadegati_map.png" data-lightbox="enlarge-image">
-                                    <img src="assets/img/wadegati_map.png" alt="Site Map" class="img-fluid map-img">
-                                </a>
-                            </div>
-                            <div class="col-lg-6 map-container">
-                                <h2>Explore Our Site Surroundings</h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="vertical-list">
-                                            <!-- Existing content -->
-                                        </div>
-                                    </div>
-                                    <!-- Add the new college information here -->
-                                    <div class="col-lg-6">
-                                        <div class="vertical-list">
-                                            <div class="vertical-list-item">
-                                                <i class="fas fa-university custom-icon"></i>
-                                                <span class="bold-text">College 1</span>&ThickSpace; 1.2 Km
-                                            </div>
-                                            <div class="vertical-list-item">
-                                                <i class="fas fa-university custom-icon"></i>
-                                                <span class="bold-text">College 2</span>&ThickSpace; 2.5 Km
-                                            </div>
-                                            <!-- Add more colleges as needed -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="timeline-container">
+        <div class="timeline" id="timeline">
+            <div class="timeline-event">Phase 1<br>Jan 2023</div>
+            <div class="timeline-event">Phase 2<br>Apr 2023</div>
+            <div class="timeline-event">Phase 3<br>Jul 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <div class="timeline-event">Phase 4<br>Oct 2023</div>
+            <!-- Add more timeline events as needed -->
         </div>
-    </section>
-    <!-- Your JavaScript and closing body/html tags go here -->
+        <div class="scroll-button scroll-left" id="scrollLeft">&#9664;</div>
+        <div class="scroll-button scroll-right" id="scrollRight">&#9654;</div>
+    </div>
+
+    <script>
+        const timeline = document.getElementById("timeline");
+        const scrollLeft = document.getElementById("scrollLeft");
+        const scrollRight = document.getElementById("scrollRight");
+
+        scrollLeft.addEventListener("click", () => {
+            timeline.scrollLeft -= 100;
+        });
+
+        scrollRight.addEventListener("click", () => {
+            timeline.scrollLeft += 100;
+        });
+    </script>
 </body>
 
 </html>
