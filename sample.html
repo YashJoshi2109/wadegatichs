@@ -2,112 +2,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 2px;
-            background: #007bff;
-            margin-left: -1px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding: 20px 0;
-            border-top: 2px solid #007bff;
-            transition: background-color 0.2s;
-        }
-
-        .timeline-item:last-child {
-            border-bottom: 2px solid #007bff;
-        }
-
-        .timeline-item:hover {
-            background-color: #f9f9f9;
-        }
-
-        .timeline-item::after {
-            content: '';
-            display: table;
-            clear: both;
-        }
-
-        .timeline-date {
-            float: left;
-            margin-right: 20px;
-            color: #007bff;
-            font-weight: bold;
-        }
-
-        .timeline-content {
-            margin-bottom: 20px;
-        }
-
-        .timeline-title {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .timeline-description {
-            margin: 10px 0;
-        }
-    </style>
+    <!-- Your head content goes here -->
 </head>
 
 <body>
-
-    <div class="container mt-5">
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">Jan 2023</div>
-                <div class="timeline-content">
-                    <h2 class="timeline-title">Started Master's Program</h2>
-                    <p class="timeline-description">I began my Master's in Data Science at UTA, embarking on an exciting
-                        academic journey.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">Apr 2023</div>
-                <div class="timeline-content">
-                    <h2 class="timeline-title">Completed First Semester</h2>
-                    <p class="timeline-description">I successfully completed my first semester, gaining valuable
-                        knowledge in data analysis and machine learning.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">Jul 2023</div>
-                <div class="timeline-content">
-                    <h2 class="timeline-title">Internship at Data Corp</h2>
-                    <p class="timeline-description">I interned at Data Corp, where I applied my skills and learned more
-                        about real-world data science applications.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">Dec 2023</div>
-                <div class="timeline-content">
-                    <h2 class="timeline-title">Second Semester</h2>
-                    <p class="timeline-description">I continued my studies and completed the second semester with a
-                        strong academic performance.</p>
+    <section id="team" class="team section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-aos="fade-up">Landsite Map</h2>
+                <div class="row">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a href="assets/img/wadegati_map.png" data-lightbox="enlarge-image">
+                                    <img src="assets/img/wadegati_map.png" alt="Site Map" class="img-fluid map-img">
+                                </a>
+                            </div>
+                            <div class="col-lg-6 map-container">
+                                <h2>Explore Our Site Surroundings</h2>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="vertical-list">
+                                            <!-- Existing content -->
+                                        </div>
+                                    </div>
+                                    <!-- Add the new college information here -->
+                                    <div class="col-lg-6">
+                                        <div class="vertical-list">
+                                            <div class="vertical-list-item">
+                                                <i class="fas fa-university custom-icon"></i>
+                                                <span class="bold-text">College 1</span>&ThickSpace; 1.2 Km
+                                            </div>
+                                            <div class="vertical-list-item">
+                                                <i class="fas fa-university custom-icon"></i>
+                                                <span class="bold-text">College 2</span>&ThickSpace; 2.5 Km
+                                            </div>
+                                            <!-- Add more colleges as needed -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
+    <!-- Your JavaScript and closing body/html tags go here -->
 </body>
 
 </html>
