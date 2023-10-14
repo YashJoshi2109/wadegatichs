@@ -2518,6 +2518,11 @@ lean span {
   margin-left: 20px; /* Spacing between the container and the arrow */
 }
 
+.product-card:hover {
+  transform: scale(1.1); /* Enlarge the card by 10% */
+}
+
+
 @media screen and (max-width: 600px) {
   .product-card {
     width: 90%;
