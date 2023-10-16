@@ -13,7 +13,7 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("getotp", {
   size: "invisible",
   callback: function (response) {
     // reCAPTCHA solved, allow signInWithPhoneNumber.
-    onSignInSubmit();
+    // onSignInSubmit();
   },
 });
 // [END appVerifier]
@@ -86,7 +86,7 @@ $(verifyotp).click(function () {
       d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000);
       var expires = "expires=" + d.toUTCString();
       document.cookie = "show" + "=" + user.uid + ";" + expires + ";path=/";
-      window.location = "/index.html";
+      window.location = "/Flexor/Flexor/client.html";
     })
     .catch(function (error) {
       // User couldn't sign in (bad verification code?)
