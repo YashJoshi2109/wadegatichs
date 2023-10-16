@@ -13,7 +13,7 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("getotp", {
   size: "invisible",
   callback: function (response) {
     // reCAPTCHA solved, allow signInWithPhoneNumber.
-    // onSignInSubmit();
+    onSignInSubmit();
   },
 });
 // [END appVerifier]
