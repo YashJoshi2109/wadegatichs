@@ -427,3 +427,12 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Scroll Left After:", productListContainer.scrollLeft);
   });
 });
+
+function myFunction() {
+  var x = document.getElementById("navbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}

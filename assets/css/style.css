@@ -2533,3 +2533,51 @@ lean span {
     margin: 10px;
   }
 }
+        /* Define styles for the navigation bar */
+        .navbar {
+          overflow: hidden;
+          background-color: #ffff; /* Background color for the navbar */
+      }
+
+      /* Style the navigation links */
+      .navbar a {
+          float: left; /* Float the links to the left to create a horizontal layout */
+          display: block; /* Display the links as block elements */
+          color: rgb(0, 0, 0); /* Text color */
+          text-align: center; /* Center the text */
+          padding: 14px 16px; /* Padding for the links */
+          text-decoration: none; /* Remove underlines from links */
+      }
+
+      /* On small screens, hide the links and display a "Menu" button */
+      @media screen and (max-width: 600px) {
+          .navbar a {
+              display: none;
+          }
+          .navbar a.icon {
+              float: right;
+              display: block;
+          }
+      }
+
+      /* Style the "Menu" button */
+      .navbar a.icon {
+          background-color: #333;
+      }
+
+      /* When the "Menu" button is clicked, display the links vertically */
+      .navbar.responsive {
+          position: relative;
+      }
+
+      .navbar.responsive a.icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+      }
+
+      .navbar.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+      }
