@@ -1,51 +1,47 @@
-//Please Subscribe Ash_is_Coding.
+document.addEventListener("DOMContentLoaded", function () {
+  // Import the functions you need from the SDKs you need
+  const firebaseConfig = {
+    apiKey: "AIzaSyAodPgiFnkKAgBCW0aKS66B1BR-SyYNy0I",
+    authDomain: "fir-392d9.firebaseapp.com",
+    projectId: "fir-392d9",
+    storageBucket: "fir-392d9.appspot.com",
+    messagingSenderId: "118631651835",
+    appId: "1:118631651835:web:e254c0440476eb19f8935e",
+    measurementId: "G-7X19HSHVQD",
+  };
 
-function sendOTP() {
-  const email = document.getElementById("email");
-  const otpverify = document.getElementsByClassName("otpverify")[0];
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
-  // Create a SMTP crendentials that I showed u in my previous video
+  // Create a Google Sign-In provider
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-  // Generating random number as OTP;
-
-  let otp_val = Math.floor(Math.random() * 10000);
-
-  let emailbody = `
-      <h1>Please Subscribe to Ash_is_Coding</h1> <br>
-      <h2>Your OTP is </h2>${otp_val}
-  `;
-
-  // listed_email = ["yashjosh7486@gmail.com", "yash212479@gmail.com"];
-  if ((email.value = listed_email)) {
-    Email.send({
-      SecureToken: "918835f7-34c9-4521-80a0-6251f45d4746",
-      To: email.value,
-      From: "wadegatichs@gmail.com",
-      Subject: "This is the from Ash_is_Coding, Please Subscribe",
-      Body: emailbody,
-    }).then(
-      //if success it returns "OK";
-      (message) => {
-        if (message === "OK") {
-          alert("OTP sent to your email " + email.value);
-
-          // now making otp input visible
-          otpverify.style.display = "block";
-          const otp_inp = document.getElementById("otp_inp");
-          const otp_btn = document.getElementById("otp-btn");
-
-          otp_btn.addEventListener("click", () => {
-            // now check whether sent email is valid
-            if (otp_inp.value == otp_val) {
-              alert("Email address verified...");
-            } else {
-              alert("Invalid OTP");
-            }
-          });
+  // Add event listener for Google Sign-In
+  const googleSigninButton = document.getElementById("google-signin");
+  googleSigninButton.addEventListener("click", function () {
+    firebase
+      .auth()
+      .signInWithPopup(googleProvider)
+      .then(function (result) {
+        // Check if the signed-in user's email is in your predefined list of email IDs.
+        const allowedEmails = [
+          "yashjosh7486@gmail.com",
+          "user2@example.com",
+          // Add your 28 allowed emails here
+        ];
+        const signedInUserEmail = result.user.email;
+        if (allowedEmails.includes(signedInUserEmail)) {
+          alert("Sign-in successful for " + signedInUserEmail);
+          // Redirect to the desired page
+          window.location.href = "blog.html";
+        } else {
+          alert("Unauthorized email. Access denied.");
+          firebase.auth().signOut();
         }
-      }
-    );
-  // } else {
-  //   alert("Not a register society member email " + email.value);
-  // }
-}
+      })
+      .catch(function (error) {
+        alert("Error in sending emails");
+        console.error(error);
+      });
+  });
+});
