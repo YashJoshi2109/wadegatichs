@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="google-signin-client_id"
+        content="367081023101-20oa44onra18ru34lg5of2dqkvco32j0.apps.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/otp.css">
     <title>Login with Google</title>
@@ -11,10 +13,10 @@
 <body>
     <div class="container">
         <h1>Login with Google</h1>
-        <button id="google-login-button">Sign in with Google</button>
-        <div id="message" class="hidden"></div>
+        <button id="google-login-button" onclick="handleGoogleSignInResponse()">Sign in with Google</button>
     </div>
-    <script type="module" src="firebase-google-auth.js"></script>
+    <script src="firebase-google-auth.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 
 </html>

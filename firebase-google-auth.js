@@ -1,42 +1,44 @@
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
-
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
-
-// Your Firebase project configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAodPgiFnkKAgBCW0aKS66B1BR-SyYNy0I",
-  authDomain: "fir-392d9.firebaseapp.com",
-  projectId: "fir-392d9",
-  storageBucket: "fir-392d9.appspot.com",
-  messagingSenderId: "118631651835",
-  appId: "1:118631651835:web:e254c0440476eb19f8935e",
-};
-
-// Initialize Firebase with your configuration
-const auth = getAuth();
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
 const googleLoginButton = document.getElementById("google-login-button");
-const messageDiv = document.getElementById("message");
+
+const allowedEmails = [
+  "yashjosh7486@gmail.com",
+  "email2@example.com",
+  // Add the 28 allowed email addresses here
+];
 
 googleLoginButton.addEventListener("click", () => {
-  const provider = new GoogleAuthProvider();
+  const clientId = "367081023101-20oa44onra18ru34lg5of2dqkvco32j0"; // Replace with your Google Cloud Console API client ID
+  const redirectUri = "https://yashjoshi2109.github.io/wadegatichs/login.html/"; // Set your redirect URI
+  const scope = "https://www.googleapis.com/auth/userinfo.profile"; // Specify the scope of access
 
-  signInWithPopup(auth, provider)
-    .then((userCredential) => {
-      // Successfully logged in with Google
-      const user = userCredential.user;
-      messageDiv.innerText = "Welcome, " + user.displayName + "!";
-      alert("Successfully logged in");
-    })
-    .catch((error) => {
-      // Handle login errors
-      messageDiv.innerText = "Google login failed. " + error.message;
-    });
+  // Create the Google Sign-In URL
+  const authUrl = `https://accounts.google.com/o/oauth2/auth?response_type=token&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
+
+  // Redirect to the Google Sign-In URL
+  window.location.href = authUrl;
 });
+
+// Function to handle the Google Sign-In response
+function handleGoogleSignInResponse() {
+  gapi.load("auth2", function () {
+    gapi.auth2
+      .init({
+        client_id: "367081023101-20oa44onra18ru34lg5of2dqkvco32j0", // Replace with your Google Cloud Console API client ID
+      })
+      .then(() => {
+        const auth2 = gapi.auth2.getAuthInstance();
+        auth2.signIn().then(() => {
+          const signedInUser = auth2.currentUser.get();
+          const signedInUserEmail = signedInUser.getBasicProfile().getEmail();
+          if (allowedEmails.includes(signedInUserEmail)) {
+            // Redirect to the desired page
+            window.location.href = "blog.html";
+          } else {
+            alert(
+              "Your email is not registered in Wadegati CHS. Contact secretary/chairman/treasurer for inquiries."
+            );
+          }
+        });
+      });
+  });
+}
