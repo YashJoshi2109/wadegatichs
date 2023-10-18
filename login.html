@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>Google Sign-In</title>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id"
         content="367081023101-20oa44onra18ru34lg5of2dqkvco32j0.apps.googleusercontent.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/otp.css">
-    <title>Login with Google</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Login with Google</h1>
-        <button id="google-signin-button">Sign in with Google</button>
-        <div id="message"></div>
-    </div>
-    <script src="firebase-google-auth.js"></script>
+    <h2>Google Sign-In</h2>
+    <div id="message"></div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <script>
+        const allowedEmails = ["yashjosh7486@gmail.com", "email2@example.com", /* Add your 28 allowed emails here */];
+
+        function onSignIn(googleUser) {
+            const profile = googleUser.getBasicProfile();
+            const userEmail = profile.getEmail();
+            if (allowedEmails.includes(userEmail)) {
+                // User's email is in the allowed list - access granted.
+                document.getElementById("message").textContent = "Access granted. Redirecting...";
+                alert("Sign-in successful for " + userEmail);
+                // Redirect to the desired page.
+                window.location.href = "blog.html";
+            } else {
+                // User's email is not in the allowed list - access denied.
+                document.getElementById("message").textContent = "Your email is not registered. Contact administrator for inquiries.";
+                signOutGoogleUser();
+            }
+        }
+
+        function signOutGoogleUser() {
+            gapi.auth2.getAuthInstance().signOut().then(function () {
+                console.log("User signed out.");
+            });
+        }
+    </script>
 </body>
 
 </html>
