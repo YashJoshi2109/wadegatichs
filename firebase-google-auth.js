@@ -1,44 +1,55 @@
-const googleLoginButton = document.getElementById("google-login-button");
-
+// Replace with your Google Cloud Console API client IDII
+const clientId =
+  "367081023101-20oa44onra18ru34lg5of2dqkvco32j0.apps.googleusercontent.com"; // Replace with your actual client ID
 const allowedEmails = [
   "yashjosh7486@gmail.com",
-  "email2@example.com",
-  // Add the 28 allowed email addresses here
+  "yash212479@gmail.com.com" /* Add your 28 allowed emails here */,
 ];
+const scope = "https://www.googleapis.com/auth/userinfo.profile"; // Specify the scope of access
 
-googleLoginButton.addEventListener("click", () => {
-  const clientId = "367081023101-20oa44onra18ru34lg5of2dqkvco32j0"; // Replace with your Google Cloud Console API client ID
-  const redirectUri = "https://yashjoshi2109.github.io/wadegatichs/login.html/"; // Set your redirect URI
-  const scope = "https://www.googleapis.com/auth/userinfo.profile"; // Specify the scope of access
-
-  // Create the Google Sign-In URL
-  const authUrl = `https://accounts.google.com/o/oauth2/auth?response_type=token&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
-
-  // Redirect to the Google Sign-In URL
-  window.location.href = authUrl;
+// Load the Google Sign-In API
+gapi.load("auth2", function () {
+  gapi.auth2.init({
+    client_id: clientId,
+  });
 });
 
-// Function to handle the Google Sign-In response
-function handleGoogleSignInResponse() {
-  gapi.load("auth2", function () {
-    gapi.auth2
-      .init({
-        client_id: "367081023101-20oa44onra18ru34lg5of2dqkvco32j0", // Replace with your Google Cloud Console API client ID
-      })
-      .then(() => {
-        const auth2 = gapi.auth2.getAuthInstance();
-        auth2.signIn().then(() => {
-          const signedInUser = auth2.currentUser.get();
-          const signedInUserEmail = signedInUser.getBasicProfile().getEmail();
-          if (allowedEmails.includes(signedInUserEmail)) {
-            // Redirect to the desired page
-            window.location.href = "blog.html";
-          } else {
-            alert(
-              "Your email is not registered in Wadegati CHS. Contact secretary/chairman/treasurer for inquiries."
-            );
-          }
-        });
-      });
-  });
+// Sign in with Google
+function signInWithGoogle() {
+  gapi.auth2
+    .getAuthInstance()
+    .signIn()
+    .then(function (googleUser) {
+      const profile = googleUser.getBasicProfile();
+      const userEmail = profile.getEmail();
+      if (allowedEmails.includes(userEmail)) {
+        // User's email is in the allowed list - access granted.
+        document.getElementById("message").textContent =
+          "Access granted. Redirecting...";
+        alert("successfully done");
+        // Perform a redirect to the desired page.
+        window.location.href = "blog.html";
+      } else {
+        // User's email is not in the allowed list - access denied.
+        document.getElementById("message").textContent =
+          "Your email is not registered. Contact administrator for inquiries.";
+        signOutGoogleUser();
+      }
+    });
 }
+
+// Sign out the user
+function signOutGoogleUser() {
+  gapi.auth2
+    .getAuthInstance()
+    .signOut()
+    .then(function () {
+      alert("Signout success");
+      console.log("User signed out.");
+    });
+}
+
+// Attach click event to the "Sign in with Google" button
+document
+  .getElementById("google-signin-button")
+  .addEventListener("click", signInWithGoogle);
