@@ -221,9 +221,8 @@
             </button>
           </div>
           <div class="modal-body">
-            <form
-              action="https://script.google.com/macros/s/AKfycbyBd2Kzc_LafnmlIaJmbPWhuwJv8FYymTEeJ_vHF3SySXJjZyP1NPnMIF161syg05xJ/exec"
-              method="post" role="form">
+            <form name="sales-form" method="post" role="form"
+              action="https://script.google.com/macros/s/AKfycbyBd2Kzc_LafnmlIaJmbPWhuwJv8FYymTEeJ_vHF3SySXJjZyP1NPnMIF161syg05xJ/exec">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
@@ -934,9 +933,8 @@
 
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
           <div class="col-xl-9 col-lg-12 mt-4">
-            <form
-              action="https://script.google.com/macros/s/AKfycbyBd2Kzc_LafnmlIaJmbPWhuwJv8FYymTEeJ_vHF3SySXJjZyP1NPnMIF161syg05xJ/exec"
-              method="post" role="form">
+            <form name="sales-form" method="post" role="form"
+              action="https://script.google.com/macros/s/AKfycbyBd2Kzc_LafnmlIaJmbPWhuwJv8FYymTEeJ_vHF3SySXJjZyP1NPnMIF161syg05xJ/exec">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -1051,8 +1049,18 @@
       });
     });
   </script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyBd2Kzc_LafnmlIaJmbPWhuwJv8FYymTEeJ_vHF3SySXJjZyP1NPnMIF161syg05xJ/exec'
 
-
+    const form = document.forms['sales-form']
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => alert("Thank you! your form is submitted successfully."))
+        .then(() => { window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 
 </body>
 
