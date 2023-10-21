@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (username === "wadegati" && password === "wadegati") {
       alert("Login successful!");
       // Redirect to another page
-      window.location.href = "/blog.html";
+      window.location.href = "blog.html";
       // Redirect to another page or perform further actions.
     } else {
       alert("Invalid credentials. Please try again.");
