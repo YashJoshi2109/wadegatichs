@@ -1,44 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Google Sign-In</title>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id"
-        content="367081023101-20oa44onra18ru34lg5of2dqkvco32j0.apps.googleusercontent.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/otp.css">
+    <title>High-Class Login</title>
 </head>
 
 <body>
-    <h2>Google Sign-In</h2>
-    <div id="message"></div>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-    <script>
-        const allowedEmails = ["yashjosh7486@gmail.com", "yash212479@gmail.com", /* Add your 28 allowed emails here */];
-
-        function onSignIn(googleUser) {
-            const profile = googleUser.getBasicProfile();
-            const userEmail = profile.getEmail();
-            if (allowedEmails.includes(userEmail)) {
-                // User's email is in the allowed list - access granted.
-                document.getElementById("message").textContent = "Access granted. Redirecting...";
-                alert("Sign-in successful for " + userEmail);
-                // Redirect to the desired page.
-                window.location.href = "blog.html";
-            } else {
-                // User's email is not in the allowed list - access denied.
-                document.getElementById("message").textContent = "Your email is not registered. Contact administrator for inquiries.";
-                signOutGoogleUser();
-            }
-        }
-
-        function signOutGoogleUser() {
-            gapi.auth2.getAuthInstance().signOut().then(function () {
-                console.log("User signed out.");
-            });
-        }
-    </script>
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png"
+                    alt="illustration" class="illustration" />
+                <h1 class="opacity">LOGIN</h1>
+                <form>
+                    <input type="text" placeholder="USERNAME" />
+                    <input type="password" placeholder="PASSWORD" />
+                    <button class="opacity">SUBMIT</button>
+                </form>
+                <div class="register-forget opacity">
+                    <a href="">REGISTER</a>
+                    <a href="">FORGOT PASSWORD</a>
+                </div>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
 </body>
 
 </html>
