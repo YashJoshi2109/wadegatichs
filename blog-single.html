@@ -143,9 +143,10 @@
       </div>
 
       <div class="cta d-none d-md-flex align-items-center">
-        <a href="#about" class="scrollto">Dashboard</a>
+        <!-- <a href="#about" class="scrollto">Dashboard</a> -->
+        <div id="google_translate_element" class="cta d-none d-md-flex align-items-center">
+        </div>
       </div>
-    </div>
   </section>
 
   <!-- ======= Header ======= -->
@@ -634,6 +635,22 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- multiligustic -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'en', // Set the default language of your website
+          includedLanguages: 'mr', // Add 'mr' for Marathi
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 
