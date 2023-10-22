@@ -2,42 +2,43 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Google Sign-In</title>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id"
-        content="367081023101-20oa44onra18ru34lg5of2dqkvco32j0.apps.googleusercontent.com">
+    <title>Visitor Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #counter {
+            font-size: 36px;
+            margin: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <h2>Google Sign-In</h2>
-    <div id="message"></div>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <h1>Visitor Counter</h1>
+    <div id="counter">Loading...</div>
 
     <script>
-        const allowedEmails = ["yashjosh7486@gmail.com", "email2@example.com", /* Add your 28 allowed emails here */];
+        // Function to retrieve and display the visitor count
+        function updateVisitorCount() {
+            // URL for retrieving the count
+            const apiUrl = "https://api.countapi.xyz/update/wadegati.co.in./wadegati/?amount=1";
 
-        function onSignIn(googleUser) {
-            const profile = googleUser.getBasicProfile();
-            const userEmail = profile.getEmail();
-            if (allowedEmails.includes(userEmail)) {
-                // User's email is in the allowed list - access granted.
-                document.getElementById("message").textContent = "Access granted. Redirecting...";
-                alert("Sign-in successful for " + userEmail);
-                // Redirect to the desired page.
-                window.location.href = "blog.html";
-            } else {
-                // User's email is not in the allowed list - access denied.
-                document.getElementById("message").textContent = "Your email is not registered. Contact administrator for inquiries.";
-                signOutGoogleUser();
-            }
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const count = data.value;
+                    document.getElementById("counter").textContent = `Visitors: ${count}`;
+                })
+                .catch(error => {
+                    console.error("Error fetching count:", error);
+                });
         }
 
-        function signOutGoogleUser() {
-            gapi.auth2.getAuthInstance().signOut().then(function () {
-                console.log("User signed out.");
-            });
-        }
+        // Initial page load
+        updateVisitorCount();
     </script>
 </body>
 
