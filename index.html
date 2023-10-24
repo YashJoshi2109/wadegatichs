@@ -74,6 +74,7 @@
     }
   </style>
 
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJNKQFNGYY"></script>
   <script>
@@ -790,6 +791,18 @@
           <!-- Add more timeline items with image cards as needed -->
         </div>
       </div>
+      <div class="marquee-container">
+        <marquee style="animation-play-state: paused;" behavior="scroll" direction="left" onmouseover="stopMarquee()"
+          onmouseout="startMarquee()">
+          Disclaimer: The content provided by the Wadegati Committee on website is for informational purposes only
+          and does not constitute a purchase offer for flats or apartments. Prices mentioned are subject to change
+          without prior notice, and property availability may vary. The sale of flats and apartments will commence once
+          we receive the MAHA RERA number. We anticipate accepting orders from November onwards, following the receipt
+          of MAHA RERA certification. Please expect to receive calls, SMS, or emails using your registered contact
+          details.
+        </marquee>
+      </div>
+
     </section>
 
     <!-- End Pricing Section -->
@@ -1081,7 +1094,18 @@
     visitCount++;
     localStorage.setItem('visits', visitCount);
   </script>
+  <script>
+    function stopMarquee() {
+      const marquee = document.querySelector('marquee');
+      marquee.style.animationPlayState = 'paused';
+    }
 
+    function startMarquee() {
+      const marquee = document.querySelector('marquee');
+      marquee.style.animationPlayState = 'running';
+    }
+
+  </script>
 
 </body>
 
