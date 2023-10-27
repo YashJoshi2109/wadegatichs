@@ -15,7 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // List of allowed email addresses
-    const emailList = ["yashjosh7486@gmail.com", "yash212479@gmail.com"];
+    const emailList = [
+      "yashjosh7486@gmail.com",
+      "yash212479@gmail.com",
+      "prakjan1975@gmail.com",
+    ];
 
     if (emailList.includes(email)) {
       // Send email only if the email is in the list
