@@ -2643,7 +2643,7 @@ lean span {
  
     .col-lg-4 {
       overflow: hidden; /* Hide any content outside the column */
-      max-height: 400px; /* Set a fixed maximum height for the column */
+      max-height: 550px; /* Set a fixed maximum height for the column */
     }
 
     .portfolio-info {
@@ -2677,8 +2677,30 @@ lean span {
       width: 100%;
     }
 
-    .swiper-pagination {
-      bottom: 0;
+    .portfolio-details-slider {
+      max-width: 100%; /* Make the slider responsive */
+    }
+
+    .swiper-slide {
       display: flex;
       justify-content: center;
+      align-items: center;
     }
+
+    iframe {
+      width: 100%; /* Set the iframe to the full width of its container */
+      max-width: 800px; /* Set a max-width to avoid stretching on larger screens */
+      height: 550px; /* Set the height for mobile view (adjust as needed) */
+    }
+
+    .swiper-pagination {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        height: 150px; /* Adjust the height for smaller screens */
+      }
+    }
+
