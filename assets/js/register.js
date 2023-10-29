@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailList = [
       "yashjosh7486@gmail.com",
       "yash212479@gmail.com",
-      "prakjan1975@gmail.com",
+      "prakjan13@gmail.com",
     ];
 
     if (emailList.includes(email)) {
