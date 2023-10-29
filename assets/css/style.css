@@ -305,7 +305,7 @@ h6 {
 }
 
 .mobile-nav-toggle.bi-x {
-  color: #fff;
+  color: #a3a3a3;
 }
 
 @media (max-width: 991px) {
@@ -349,13 +349,13 @@ h6 {
   overflow-y: auto;
   transition: 0.3s;
 }
-
+/* 
 .navbar-mobile a,
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
   color: #473d3a;
-}
+} */
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
@@ -2551,9 +2551,7 @@ lean span {
 
       /* On small screens, hide the links and display a "Menu" button */
       @media screen and (max-width: 600px) {
-          .navbar a {
-              display: none;
-          }
+        
           .navbar a.icon {
               float: right;
               display: block;
