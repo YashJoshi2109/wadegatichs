@@ -28,14 +28,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/gallery.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Flexor
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -67,14 +61,15 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
           <li><a class="nav-link scrollto" href="blog.html">Dashboard</a></li>
-          <li><a class="nav-link scrollto active" href="404.html">Events</a></li>
+          <li><a class="nav-link scrollto active" href="#">Events</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i class=" bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
+
   </header><!-- End Header -->
 
   <main id="main">
@@ -87,7 +82,7 @@
           <li><a href="blog.html">Dashboard</a></li>
           <li>Events</li>
         </ol>
-        <h2>Events Video Gallery</h2>
+        <h2>Events Gallery</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
@@ -223,25 +218,106 @@
       </div>
     </section><!-- End Portfolio Details Section -->
 
+    <section class="gallery-sec sec-pad section-bg">
+      <div class="container">
+        <div class="section-ajeet-title text-center">Photo Gallery</div>
+
+        <div id="gf-BtnContainer" class="filter">
+          <button class="gf-btn gf-btn-active" onclick="filterSelection('bollywood')">Bollywood</button>
+          <button class="gf-btn" onclick="filterSelection('hollywood')">Hollywood</button>
+          <button class="gf-btn" onclick="filterSelection('tv')">TV Shows</button>
+        </div>
+
+        <!-- Gallery Grid Images -->
+        <div class="gallery sets">
+
+          <div class="gf-column bollywood">
+            <img src="assets/img\gallery/2022/DSCN5009.JPG" />
+          </div>
+
+          <div class="gf-column bollywood">
+            <img src="assets/img/gallery/2022/DSCN5014.JPG" />
+          </div>
+
+          <div class="gf-column bollywood">
+            <img src="assets/img/gallery/2022/DSCN5024.JPG" />
+          </div>
+
+          <div class="gf-column bollywood">
+            <img src="assets\img\gallery\2022\DSCN5064.JPG" />
+          </div>
+
+          <div class="gf-column bollywood">
+            <img src="assets\img\gallery\2022\DSCN5047.JPG" />
+          </div>
+          <div class="gf-column bollywood">
+            <img src="assets\img\gallery\2022\DSCN5071.JPG" />
+          </div>
+          <div class="gf-column bollywood">
+            <img src="assets\img\gallery\2022\DSCN5076.JPG" />
+          </div>
+          <div class="gf-column bollywood">
+            <img src="assets/img/gallery/2022/DSCN5030.JPG" />
+          </div>
+          <div class="gf-column bollywood">
+            <img src="assets/img/gallery/2022/DSCN5083.JPG" />
+          </div>
+          <div class="gf-column bollywood">
+            <img src="assets/img/gallery/2022/DSCN5032.JPG" />
+          </div>
+
+
+
+
+
+
+          <div class="gf-column hollywood">
+            <img src="assets/img/gallery/2022/DSCN5030.JPG" />
+          </div>
+
+          <div class="gf-column hollywood">
+            <img src="https://i.redd.it/mded53nmw2w91.jpg" />
+          </div>
+
+          <div class="gf-column hollywood">
+            <img src="https://i.redd.it/4b6s83hss9p91.jpg" />
+          </div>
+
+          <div class="gf-column tv">
+            <img src="https://i.redd.it/2s7w09k01ol91.jpg" />
+          </div>
+
+          <div class="gf-column tv">
+            <img src="https://i.redd.it/2s7w09k01ol91.jpg" />
+          </div>
+
+        </div>
+
+        <!-- <div class="all-btn">
+          <a href="#" style="color: white; text-decoration-line: none">MORE IMAGES </a>
+        </div> -->
+      </div>
+    </section>
+
+
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    <div class="footer-top">
+    <div class="footer-top section-bg">
       <div class="container">
         <div class="row">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.3345408131677!2d72.93630229809561!3d19.13682800836563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b87870b98aa5%3A0x25d977580ebcf22c!2sWadegati%20CHS%2C%20Ashok%20Nagar%20Rd%2C%20NCH%20Colony%2C%20Kanjurmarg%20East%2C%20Mumbai%2C%20Maharashtra%20400042!5e0!3m2!1sen!2sin!4v1696697606462!5m2!1sen!2sin"
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-
         </div>
       </div>
     </div>
 
     <div class="container d-lg-flex py-4">
-
       <div class="me-lg-auto text-center text-lg-start">
         <div class="copyright">
           &copy; Copyright <strong><span>Wadegati</span></strong>. All Rights Reserved
@@ -268,6 +344,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
