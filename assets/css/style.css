@@ -409,7 +409,7 @@ h6 {
   width: 100%;
   height: 60vh;
   /* background: url("../img/hero-bg.jpg") center center; */
-  background: url("../img/hero-bg.jpg") center;
+  background: url("../img/occassion/Canva_deepawali.png") center;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -485,14 +485,15 @@ h6 {
 @media (max-width: 1024px),
 (max-height: 768px) {
   #hero {
-    margin-bottom: -150px;
+    margin-bottom: -125px;
     height: 80vh;
   }
 }
 
 @media (max-width: 768px) {
   #hero {
-    height: 80vh;
+    margin-bottom: -17px;
+    height: 31vh;
   }
 
   #hero h1 {
