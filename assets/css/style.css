@@ -408,8 +408,8 @@ h6 {
 #hero {
   width: 100%;
   height: 60vh;
-  /* background: url("../img/hero-bg.jpg") center center; */
-  background: url("../img/occassion/Canva_deepawali.png") center;
+  background: url("../img/hero-bg.jpg") center center;
+  /* background: url("../img/occassion/Canva_deepawali.png") center; */
   background-size: cover;
   position: relative;
   z-index: 1;
