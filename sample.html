@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Rocket Launch Page</title>
     <style>
+        /* Common styles for both mobile and desktop */
         body {
             display: flex;
             justify-content: center;
@@ -12,7 +13,6 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
-            /* hide overflow to keep the rocket within visible area */
             background-color: #000;
             color: #fff;
             font-family: Arial, sans-serif;
@@ -22,20 +22,16 @@
             text-align: center;
         }
 
-        h2 #countdown {
+        #countdown {
             font-size: 10em;
-            /* Increase font size */
             font-weight: bold;
-            /* Make the text bold */
             margin-bottom: 20px;
         }
 
         #rocket-container {
             position: absolute;
             bottom: -50px;
-            /* position closer to the bottom */
             left: 50%;
-            /* horizontally center the rocket */
             transform: translateX(-50%);
             height: 300px;
         }
@@ -61,14 +57,35 @@
         #startButton:hover {
             background-color: #2980b9;
         }
+
+        /* Mobile specific styles */
+        @media screen and (max-width: 600px) {
+            #countdown {
+                font-size: 6em;
+            }
+
+            #startButton {
+                font-size: 1em;
+                padding: 8px 16px;
+                margin-bottom: 10px;
+            }
+
+            #rocket-container {
+                position: absolute;
+                bottom: -50px;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 300px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>
-            <div id="countdown"></div>
-        </h1>
+
+        <div id="countdown"></div>
+
         <button id="startButton">Start Launch</button>
         <div id="rocket-container">
             <img id="rocket" src="https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/512/rocket.png"
@@ -99,7 +116,7 @@
 
                         setTimeout(() => {
                             window.location.href = 'index.html'; // Redirect to index.html after liftoff
-                        }, 20000); // Wait for the rocket animation to finish (10 seconds)
+                        }, 20000); // Wait for the rocket animation to finish (20 seconds)
                     }
                 }, 1000);
             });
