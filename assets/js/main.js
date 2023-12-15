@@ -436,3 +436,29 @@ function myFunction() {
     x.className = "navbar";
   }
 }
+
+// Same JavaScript code as before
+const popup = document.getElementById("popup");
+const closeBtn = document.getElementById("close-btn");
+
+function openPopup(imageUrl) {
+  const popupImg = document.getElementById("popup-img");
+  popupImg.src = imageUrl;
+  popup.style.display = "block";
+}
+
+function closePopup() {
+  popup.style.display = "none";
+}
+
+closeBtn.addEventListener("click", closePopup);
+
+// Function to open the popup after 5 seconds
+function showPopupAfterDelay(imageUrl) {
+  setTimeout(function () {
+    openPopup(imageUrl);
+  }, 5000); // 5000 milliseconds = 5 seconds
+}
+
+// Call the function to display the popup after 5 seconds
+showPopupAfterDelay("assets/img/occassion/Puja 2023-1.png");

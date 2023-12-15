@@ -410,6 +410,7 @@ h6 {
   height: 60vh;
   background: url("../img/hero-bg.jpg") center center;
   /* background: url("../img/occassion/Canva_deepawali.png") center; */
+  /* background: url("../img/occassion/Puja\ 2023-1.png") center; */
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -2526,6 +2527,59 @@ lean span {
 .slideshow-container1 {
   overflow: hidden;
 }
+
+/* Updated CSS styles for responsiveness */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  max-width: 90%; /* Adjust the maximum width as needed */
+  max-height: 90%; /* Adjust the maximum height as needed */
+  overflow: auto;
+}
+
+.popup-content {
+  position: relative;
+  text-align: center;
+}
+
+#popup-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .popup {
+    display: none;
+    position: fixed;
+    top: 438px;
+    left: 201px;
+    right: -167px;
+    bottom: 183px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    max-width: 90%; /* Adjust the maximum width as needed */
+    max-height: 90%; /* Adjust the maximum height as needed */
+    overflow: auto;
+  }
+}
+
 
 
 @media screen and (max-width: 600px) {
