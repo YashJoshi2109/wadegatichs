@@ -3,16 +3,109 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Display PDFs</title>
+    <title>Rocket Launch Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            /* hide overflow to keep the rocket within visible area */
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h2 #countdown {
+            font-size: 10em;
+            /* Increase font size */
+            font-weight: bold;
+            /* Make the text bold */
+            margin-bottom: 20px;
+        }
+
+        #rocket-container {
+            position: absolute;
+            bottom: -50px;
+            /* position closer to the bottom */
+            left: 50%;
+            /* horizontally center the rocket */
+            transform: translateX(-50%);
+            height: 300px;
+        }
+
+        #rocket {
+            position: absolute;
+            bottom: 0;
+            transition: transform 20s linear;
+        }
+
+        #startButton {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        #startButton:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>PDF Categories</h1>
-    <ul>
-        <li><a href="display_pdf.html?file=assets\pdf\NOC_PLAN.pdf">Category 1</a></li>
-        <li><a href="display_pdf.html?file=path_to_pdf_file_2.pdf">Category 2</a></li>
-        <!-- Add more categories and their respective PDF file paths here -->
-    </ul>
+    <div class="container">
+        <h1>
+            <div id="countdown"></div>
+        </h1>
+        <button id="startButton">Start Launch</button>
+        <div id="rocket-container">
+            <img id="rocket" src="https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/512/rocket.png"
+                alt="Rocket">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const countdownElement = document.getElementById('countdown');
+            const rocketElement = document.getElementById('rocket');
+            const startButton = document.getElementById('startButton');
+
+            let countdown = 10;
+            countdownElement.textContent = countdown;
+
+            startButton.addEventListener('click', function () {
+                startButton.disabled = true; // Disable the button after starting the countdown
+
+                const countdownInterval = setInterval(() => {
+                    countdown--;
+                    if (countdown > 0) {
+                        countdownElement.textContent = countdown;
+                    } else {
+                        clearInterval(countdownInterval);
+                        countdownElement.textContent = 'Liftoff!';
+                        rocketElement.style.transform = 'translateY(-100%)';
+
+                        setTimeout(() => {
+                            window.location.href = 'index.html'; // Redirect to index.html after liftoff
+                        }, 20000); // Wait for the rocket animation to finish (10 seconds)
+                    }
+                }, 1000);
+            });
+        });
+
+    </script>
 </body>
 
 </html>
